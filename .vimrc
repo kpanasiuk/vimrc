@@ -34,6 +34,7 @@ NeoBundle 'bling/vim-airline'                 " status line and tabs/buffers
 NeoBundle 'terryma/vim-multiple-cursors'      " multiple cursors
 NeoBundle 'kien/ctrlp.vim'                    " quick file search
 NeoBundle 'ervandew/supertab'                 " test complete by <tab>
+NeoBundle 'dyng/ctrlsf.vim'                   " power search/view/edit
 
 " Version control
 NeoBundle 'tpope/vim-fugitive'                " git wrapper
@@ -114,7 +115,13 @@ set undoreload=10000
 set undodir=~/.vim/undo
 set backupdir=~/.vim/backup/
 set directory=~/.vim/backup/
-silent! !mkdir -p ~/.vim/undo ~/.vim/backup
+
+if '' == glob('~/.vim/undo')
+  silent! !mkdir -p ~/.vim/undo
+endif
+if '' == glob('~/.vim/backup')
+  silent! !mkdir -p ~/.vim/backup
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Begin: key map
@@ -131,7 +138,9 @@ nnoremap <leader>S ^vg_y:execute @@<cr>
 nnoremap vv ^vg_
 nnoremap gn <esc>:tabnew<cr>
 nnoremap <tab> >>
+vnoremap <tab> >
 nnoremap <S-tab> <<
+vnoremap <S-tab> <
 
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
