@@ -92,7 +92,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set wildmode=list,full
+set wildmode=longest,list
 set completeopt=longest,menu,preview
 
 set scrolloff=3
@@ -155,17 +155,19 @@ nnoremap <silent> <leader><space> :noh<cr>
 " Begin: bundle options
 "
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-multiple-cursors
+
 let g:multi_cursor_exit_from_insert_mode = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " nerdtree
+
 map <F4> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " airline
+
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 let g:airline_powerline_fonts = 1
@@ -185,17 +187,25 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " solarized
+
 "let g:solarized_termtrans=1
 "let g:solarized_termcolors=256
-set background=dark
+set background = dark
 colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Ctrl-p
+
 let g:ctrlp_map = "<c-p>"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlSF
+
+let g:ctrlsf_auto_close = 0
+let g:ctrlsf_confirm_save = 0
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_position = 'right'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Begin: functions
